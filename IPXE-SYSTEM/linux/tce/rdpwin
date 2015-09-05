@@ -1,0 +1,2 @@
+#!/bin/sh
+aterm -e sh -c 'tce-load -wi rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'

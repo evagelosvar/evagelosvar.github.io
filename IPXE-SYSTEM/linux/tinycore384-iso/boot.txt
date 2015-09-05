@@ -1,0 +1,5 @@
+#!ipxe
+
+kernel http://static.netboot.me/memdisk-iso
+initrd http://distro.ibiblio.org/tinycorelinux/3.x/release/tinycore_3.8.4.iso
+boot

@@ -1,0 +1,19 @@
+#!ipxe
+
+menu 
+
+item tinycore60 tinycore64
+item shell shell
+choose --default exit --timeout 3000 target && goto ${target}
+
+
+:shell
+shell
+
+:tinycore64
+kernel microcore64/vmlinuz quiet ramdisk_size=10000 pause 
+initrd microcore64/core.gz
+initrd microcore64/tce.tar /home/tc/tce.tar
+initrd microcore64/cm /home/tc/cm
+initrd bootlocal.sh /opt/bootlocal.sh mode=755
+boot

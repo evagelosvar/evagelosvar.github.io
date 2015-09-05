@@ -1,0 +1,5 @@
+#!/bin/sh
+tce-load -wi Xprogs rdesktop
+echo GIVE the IP
+read IP
+rdesktop -f $IP

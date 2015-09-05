@@ -1,0 +1,27 @@
+#!/bin/sh
+#tar xvf /home/tc/tce.tar
+
+tar -xvf /home/tc/tce.tar -C /home/tc/tmp
+
+#tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
+
+tce-load -i /home/tc/tmp/optional/aterm 
+tce-load -i /home/tc/tmp/optional/flwm 
+tce-load -i /home/tc/tmp/optional/wbar 
+tce-load -i /home/tc/tmp/optional/Xorg-7.7 
+tce-load -i /home/tc/tmp/optional/Xprogs 
+tce-load -i /home/tc/tmp/optional/rdesktop
+startx
+
+#aterm -e sh -c 'tce-load -i rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
+
+
+#tce-load -wi  Xprogs  rdesktop 
+#echo GIVE the IP
+#read IP
+#rdesktop -f $IP
+
+
+#aterm -e sh -c 'tce-load -wi rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
+
+aterm -e sh -c 'tce-load -i rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
