@@ -1,5 +1,0 @@
-#!ipxe
-
-kernel vmlinuz bootfile=http://sxoleio.besaba.com/w/linux/ initrd=core.gz fastboot initrd=core.gz
-initrd core.gz
-boot

@@ -1,3 +1,0 @@
-#!/bin/sh
-tce-load -wi aterm flwm wbar Xorg-7.7 Xprogs
-startx

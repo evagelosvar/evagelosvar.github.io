@@ -1,5 +1,0 @@
-#!ipxe
-:sas
-kernel http://static.netboot.me/tinycore/2.2/bzImage
-initrd http://static.netboot.me/tinycore/2.2/tinycore.gz
-boot
