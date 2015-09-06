@@ -5,7 +5,7 @@ tar -xvf /opt/tce.tar -C /opt/tmp
 
 #tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
 for file in /opt/tmp/tce/optional/*; do
-tce-load -i /opt/tmp/tce/optional/$file
+tce-load -i /opt/tmp/tce/optional/${file}
 echo $file
 done
 #tce-load -i /opt/tmp/tce/optional/Xorg-7.7 
