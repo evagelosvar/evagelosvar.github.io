@@ -2,7 +2,7 @@
 
 menu 
 
-item tinycore60 tinycore64
+item tinycore64 tinycore64
 item shell shell
 choose --default exit --timeout 3000 target && goto ${target}
 
