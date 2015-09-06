@@ -6,37 +6,13 @@ tar -zxvf /opt/mydata.tgz -C /
 #tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
 for file in /opt/tmp/tce/optional/*.tcz; do
 tce-load -i $file
-echo $file
-read p
+#echo $file
+#read p
 done
 #tce-load -i /opt/tmp/tce/optional/Xorg-7.7 
-tce-load -i /opt/tmp/tce/optional/Xlibs.tcz
-tce-load -i /opt/tmp/tce/optional/Xprogs.tcz
-tce-load -i /opt/tmp/tce/optional/Xvesa.tcz
-tce-load -i /opt/tmp/tce/optional/aterm.tcz
-tce-load -i /opt/tmp/tce/optional/fltk-1.3.tcz
-tce-load -i /opt/tmp/tce/optional/flwm_topside.tcz
-tce-load -i /opt/tmp/tce/optional/freetype.tcz
-tce-load -i /opt/tmp/tce/optional/imlib2-bin.tcz
-tce-load -i /opt/tmp/tce/optional/imlib2.tcz
-tce-load -i /opt/tmp/tce/optional/libICE.tcz
-tce-load -i /opt/tmp/tce/optional/libSM.tcz
-tce-load -i /opt/tmp/tce/optional/libX11.tcz
-tce-load -i /opt/tmp/tce/optional/libXau.tcz
-tce-load -i /opt/tmp/tce/optional/libXdmcp.tcz
-tce-load -i /opt/tmp/tce/optional/libXext.tcz
-tce-load -i /opt/tmp/tce/optional/libXfont.tcz
-tce-load -i /opt/tmp/tce/optional/libXi.tcz
-tce-load -i /opt/tmp/tce/optional/libXmu.tcz
-tce-load -i /opt/tmp/tce/optional/libXpm.tcz
-tce-load -i /opt/tmp/tce/optional/libXrandr.tcz
-tce-load -i /opt/tmp/tce/optional/libXrender.tcz
-tce-load -i /opt/tmp/tce/optional/libXt.tcz
-tce-load -i /opt/tmp/tce/optional/libfontenc.tcz
-tce-load -i /opt/tmp/tce/optional/libjpeg-turbo.tcz
-tce-load -i /opt/tmp/tce/optional/libpng.tcz
-tce-load -i /opt/tmp/tce/optional/libxcb.tcz
-tce-load -i /opt/tmp/tce/optional/wbar.tcz
+#tce-load -i /opt/tmp/tce/optional/Xlibs.tcz
+
+
 startx
 
 #aterm -e sh -c 'tce-load -i rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
@@ -50,4 +26,4 @@ startx
 
 #aterm -e sh -c 'tce-load -wi rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
 
-aterm -e sh -c 'tce-load -i rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
+#aterm -e sh -c 'tce-load -i rdesktop;echo GIVE the IP;read IP;rdesktop -f $IP'
