@@ -4,8 +4,12 @@ mkdir /opt/tmp
 tar -xvf /opt/tce.tar -C /opt/tmp
 
 #tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
-#tce-load -i /opt/tmp/tce/optional/Xorg-7.7
- 
+for file in /opt/tmp/tce/optional/*.tcz; do
+tce-load -i $file
+echo $file
+read p
+done
+#tce-load -i /opt/tmp/tce/optional/Xorg-7.7 
 tce-load -i /opt/tmp/tce/optional/Xlibs.tcz
 tce-load -i /opt/tmp/tce/optional/Xprogs.tcz
 tce-load -i /opt/tmp/tce/optional/Xvesa.tcz
