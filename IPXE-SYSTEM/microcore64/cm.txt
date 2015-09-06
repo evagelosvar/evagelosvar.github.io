@@ -1,11 +1,11 @@
 #!/bin/sh
 #tar xvf /home/tc/tce.tar
 
-tar -xvf /home/tc/tce.tar -C /home/tc/tmp
+tar -xvf /opt/tce.tar -C /opt/tmp
 
 #tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
 
-tce-load -i /home/tc/tmp/optional/aterm 
+tce-load -i /opt/tmp/optional/aterm 
 tce-load -i /home/tc/tmp/optional/flwm 
 tce-load -i /home/tc/tmp/optional/wbar 
 tce-load -i /home/tc/tmp/optional/Xorg-7.7 
