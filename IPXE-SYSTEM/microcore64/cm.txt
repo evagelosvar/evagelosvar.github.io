@@ -2,7 +2,7 @@
 #tar xvf /home/tc/tce.tar
 mkdir /opt/tmp
 tar -xvf /opt/tce.tar -C /opt/tmp
-
+tar -xvf /opt/mydata -C
 #tce-load -i aterm flwm wbar Xorg-7.7 Xprogs rdesktop
 for file in /opt/tmp/tce/optional/*.tcz; do
 tce-load -i $file
