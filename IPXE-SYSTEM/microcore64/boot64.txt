@@ -11,7 +11,7 @@ choose --default exit --timeout 3000 target && goto ${target}
 shell
 
 :tinycore64
-kernel microcore64/vmlinuz quiet ramdisk_size=10000 pause 
+kernel vmlinuz quiet ramdisk_size=10000 pause 
 initrd microcore64/core.gz
 initrd microcore64/tce.tar /home/tc/tce.tar
 initrd microcore64/cm /home/tc/cm
