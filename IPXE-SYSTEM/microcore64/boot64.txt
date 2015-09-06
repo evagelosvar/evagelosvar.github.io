@@ -13,7 +13,7 @@ shell
 :tinycore64
 kernel vmlinuz quiet ramdisk_size=10000 pause 
 initrd core.gz
-initrd tce.tar /home/tc/tce.tar
-initrd cm.txt /home/tc/cm.txt
+initrd tce.tar /opt/tce.tar
+initrd cm.txt /opt/cm.txt
 initrd bootlocal.sh /opt/bootlocal.sh mode=755
 boot
