@@ -1,0 +1,33 @@
+ body {
+    width: 100%;
+	font-family: "Verdana", Geneva, sans-serif;
+	font-family: Calibri;
+	line-height: 120%;
+ 
+margin-left: 100px;
+}
+a {
+	text-decoration: none;
+	padding-left: 50px;
+	/*font-weight: bold;
+	color: rgb(255,0,0);
+	color: GRAY;*/
+	color: blue;
+}
+h3 a{
+   /* background: #E6E6E6; */
+    text-align: left;
+	
+	font-family: "Verdana", Geneva, sans-serif;
+	font-family: Calibri;
+	color: red
+}
+
+h3 {
+   /* background: #E6E6E6; */
+    text-align: left;
+	
+	font-family: "Verdana", Geneva, sans-serif;
+	font-family: Calibri;
+	color: red
+}
