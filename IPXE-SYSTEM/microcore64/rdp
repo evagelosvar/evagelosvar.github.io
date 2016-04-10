@@ -1,0 +1,4 @@
+#!/bin/sh
+
+startx
+aterm -e sh -c 'echo GIVE the IP;read IP;rdesktop -f $IP'
