@@ -1,0 +1,82 @@
+#!/bin/sh
+
+mkdir /opt/tmp
+tar -xvf /opt/tce.tar -C /opt/tmp
+
+#=====================
+#LOAD EXTENSIONS FROM TCE.TAR
+#====================================
+	for file in /opt/tmp/tce/optional/*.tcz; do
+	tce-load -i $file > /dev/null
+	done
+
+
+#=====================
+#FIND MAC ADDRESSES OF COMPUTER AND PRINTS
+#===========================
+MAC=`cat /sys/class/net/eth0/address`
+
+
+
+#=====================
+#GETS THE INFO BASED ON THE MAC ADDRESS AND CREATE VARIABLES
+#=====================
+fMAC=`grep -w -i $MAC /configFile.txt`
+set $fMAC
+#echo $1 $2 $3 $4
+MAC=$1
+VGA=$2
+IP=$3
+HOST=$4
+
+
+
+
+#=====================
+#REMOTE DISPLAY
+#=====================
+sudo sed -i -e 's/1024x768x32/'$VGA'/' /home/tc/.xsession
+#su - tc -c 'sed -i -e 's/1024x768x32/'$VGA'/' /home/tc/.xsession'
+sudo sed -i -e 's/-nolisten/-ac/' /home/tc/.xsession
+sudo sed -i -e 's/tcp//' /home/tc/.xsession
+#cat /home/tc/.xsession
+
+
+
+
+#=====================
+#SAMBA CONFIGURATION
+#=====================
+sudo chmod 777 /usr/local/etc/samba/smb.conf
+sudo echo [tmp2] >> /usr/local/etc/samba/smb.conf
+sudo echo path = /tmp >> /usr/local/etc/samba/smb.conf
+sudo echo writable = yes >> /usr/local/etc/samba/smb.conf
+sudo echo public = yes >> /usr/local/etc/samba/smb.conf
+sudo sed -i -e 's/security = user/security = share/g' /usr/local/etc/samba/smb.conf
+#sudo cat /usr/local/etc/samba/smb.conf
+sudo /usr/local/etc/init.d/samba restart
+
+
+
+
+
+#============================
+#CHANGE HOSTNAME
+#============================
+sudo hostname $HOST box
+sudo chmod 777 /etc/hostname
+sudo echo $HOST > /etc/hostname
+echo $MAC
+echo $HOST
+echo $IP
+
+
+#============================
+#CALLS RDESKTOP
+#============================
+export IP=$IP;
+startx
+aterm -e sh -c 'echo $IP;rdesktop -f -p '123456' -u 'admin' $IP'
+aterm -e sh -c 'killall Xvesa';
+#cat /home/tc/.xsession
+
