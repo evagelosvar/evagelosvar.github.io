@@ -5,3 +5,11 @@ startxfce4
 xrandr -s 800x600
 
 sudo apt-get install x11-xserver-utils
+
+telnet 10.1.1.1 <<EOF
+remotecommand 1
+remotecommand 2
+EOF
+
+
+https://elenako.com/2013/04/04/expect-script-start-telnet-run-commands-close-telnet/
