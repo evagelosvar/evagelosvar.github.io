@@ -13,3 +13,6 @@ EOF
 
 
 https://elenako.com/2013/04/04/expect-script-start-telnet-run-commands-close-telnet/
+http://stackoverflow.com/questions/7013137/automating-telnet-session-using-bash-scripts
+
+http://stackoverflow.com/questions/34595309/how-to-automate-busybox-telnet
