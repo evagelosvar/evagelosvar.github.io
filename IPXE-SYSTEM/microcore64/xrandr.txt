@@ -1,0 +1,7 @@
+gnome-session
+gnome-panel
+startkde
+startxfce4
+xrandr -s 800x600
+
+sudo apt-get install x11-xserver-utils
