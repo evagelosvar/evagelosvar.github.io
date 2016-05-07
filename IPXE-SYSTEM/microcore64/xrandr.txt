@@ -18,3 +18,6 @@ http://stackoverflow.com/questions/7013137/automating-telnet-session-using-bash-
 http://stackoverflow.com/questions/34595309/how-to-automate-busybox-telnet
 
 
+(echo "Welcome";echo -e "\r";sleep 10;echo "user01";echo -e "\r";sleep 3;echo "123456"; echo -e "\r";sleep 3;echo "ls";echo -e "\r";sleep 13;echo "export DISPLAY=192.168.1.9:0";echo -e "\r";sleep 3;echo "gnome-panel";echo -e "\r";sleep 555)|telnet 192.168.1.111
+
+
