@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 mkdir /opt/tmp
 tar -xvf /opt/tce.tar -C /opt/tmp
 
