@@ -1,0 +1,39 @@
+#!ipxe
+
+menu 
+
+item tinycore384 tinycore384
+#item shell shell
+#choose --default exit --timeout 0 target && goto ${target}
+
+
+
+:tinycore384
+#kernel bzImage quiet ramdisk_size=10000
+kernel bzImage quiet ramdisk_size=10000 text  kmap=qwerty/gr-pc lang=el_GR
+#kernel bzImage quiet ramdisk_size=10000 text xvesa=800x600x16 kmap=qwerty/gr-pc lang=el_GR
+#kernel bzImage quiet ramdisk_size=10000 text   xvesa=800x600x16 xsetup vga=788 xvesa=800x600x16  
+
+initrd tinycore.gz
+initrd tce.tar /opt/tce.tar
+initrd cm.txt /opt/cm.txt
+initrd rdp /home/tc/rdp
+initrd en /home/tc/en
+initrd gr /home/tc/gr
+initrd bootlocal.sh /opt/bootlocal.sh mode=755
+initrd configFile.txt /configFile.txt
+initrd Arialbd.ttf /usr/share/fonts/Arialbd.ttf mode 755
+
+
+
+#/usr/local/share/fonts or /usr/share/fonts for system wide, ~/.fonts 
+
+#initrd mydata.tgz /opt/mydata.tgz
+#initrd cm.txt /opt/cm.txt
+
+boot
+
+
+
+:shell
+shell

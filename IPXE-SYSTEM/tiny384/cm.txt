@@ -1,0 +1,164 @@
+#!/bin/sh
+
+
+
+mkdir /opt/tmp
+tar -xvf /opt/tce.tar -C /opt/tmp
+
+#tar -xvf /opt/tce.tar -C /opt/tmp
+
+
+#=====================
+#LOAD EXTENSIONS FROM TCE.TAR
+#====================================
+	for file in /opt/tmp/tce/optional/*.tcz; do
+	tce-load -i $file > /dev/null
+	done
+
+
+#=====================
+#DELETE TCE.TAR
+#====================================
+rm /opt/tce.tar
+
+
+#=====================
+#FIND MAC ADDRESSES OF COMPUTER AND PRINTS
+#===========================
+MAC=`cat /sys/class/net/eth0/address`
+
+
+
+#=====================
+#GETS THE INFO BASED ON THE MAC ADDRESS AND CREATE VARIABLES
+#=====================
+fMAC=`grep -w -i $MAC /configFile.txt`
+set $fMAC
+#echo $1 $2 $3 $4
+MAC=$1
+VGA=$2
+IP=$3
+USER=$4
+PASS=$5
+TYPE=$6
+HOST=$7
+
+echo $HOST
+echo $TYPE
+
+
+
+#=====================
+#REMOTE DISPLAY & SCREEN ANALYSIS
+#=====================
+sudo sed -i -e 's/1024x768x32/'$VGA'/' /home/tc/.xsession
+#su - tc -c 'sed -i -e 's/1024x768x32/'$VGA'/' /home/tc/.xsession'
+sudo sed -i -e 's/-nolisten/-ac/' /home/tc/.xsession
+sudo sed -i -e 's/tcp//' /home/tc/.xsession
+#cat /home/tc/.xsession
+
+
+getLocIP=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
+
+#=====================
+#SAMBA CONFIGURATION
+#=====================
+sudo chmod 777 /usr/local/etc/samba/smb.conf
+sudo echo [tmp$getLocIP] >> /usr/local/etc/samba/smb.conf
+sudo echo path = /tmp >> /usr/local/etc/samba/smb.conf
+sudo echo writable = yes >> /usr/local/etc/samba/smb.conf
+sudo echo public = yes >> /usr/local/etc/samba/smb.conf
+sudo sed -i -e 's/security = user/security = share/g' /usr/local/etc/samba/smb.conf
+#sudo cat /usr/local/etc/samba/smb.conf
+sudo /usr/local/etc/init.d/samba restart
+
+		#sudo mkdir /mnt/net
+		#sudo mount -t cifs //192.168.1.3/000 /mnt/net -o user=USER
+
+
+
+#============================
+#CHANGE HOSTNAME
+#============================
+sudo hostname $HOST box
+sudo chmod 777 /etc/hostname
+sudo echo $HOST > /etc/hostname
+echo $MAC
+echo $HOST
+echo $IP
+echo $getLocIP
+#exit
+
+#============================
+#CALLS RDESKTOP & XSERVER
+#============================
+
+export IP=$IP;
+export getLocIP=$getLocIP;
+export USER=$USER
+
+
+					#============
+					#startx
+					#aterm -e sh -c 'xmodmap /home/tc/gr;read x'
+
+					#exit
+					#============
+
+
+
+
+
+
+case $TYPE in
+
+RDP)
+#============================
+#CALLS RDESKTOP
+#============================
+
+startx
+aterm -e sh -c 'echo $IP;rdesktop -f -p '123456' -u 'admin' $IP'
+
+aterm -e sh -c 'killall Xvesa';
+;;
+
+XSR)
+#============================
+#CALLS X SERVER
+#============================
+
+startx
+
+aterm -e sh -c 'xmodmap /home/tc/gr;(echo "Welcome";echo -e "\r";sleep 10;echo $USER;echo -e "\r";sleep 3;echo "123456"; echo -e "\r";sleep 3;echo "ls";echo -e "\r";sleep 13;echo "export DISPLAY=$getLocIP:0";echo -e "\r";sleep 3;echo "gnome-panel";echo -e "\r";sleep 555)|telnet 192.168.1.111'
+		
+aterm -e sh -c 'killall Xvesa';
+;;
+
+* )
+echo you did not say yes or no;;
+esac
+
+
+
+
+
+
+
+
+
+#============================
+#CALLS XPROGRAMS FROM TELNET
+#============================
+#telnet -l user01 192.168.1.111;expect "Password:";send "123456\r"
+
+#GET THE IP
+#export DISPLAY=192.168.1.9
+#libreoffice --writer &
+#chromium-browser &
+#gedit &
+
+
+
+
+
