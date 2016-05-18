@@ -1,0 +1,12 @@
+#!ipxe
+
+menu
+item core core
+
+
+:core
+chain http://192.168.1.111/tinycore384/boot64.txt
+
+
+
+
