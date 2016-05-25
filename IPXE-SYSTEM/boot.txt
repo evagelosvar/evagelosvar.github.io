@@ -2,11 +2,12 @@
 
 menu
 item core core
-
+item core2 core2
 
 :core
-chain http://192.168.1.111/tinycore384/boot64.txt
+chain http://evagelosvar.github.io/IPXE-SYSTEM/tiny384/boot64.txt
 
-
+core2
+chain http://evagelosvar.github.io/IPXE-SYSTEM/microcore64/boot64.txt
 
 
