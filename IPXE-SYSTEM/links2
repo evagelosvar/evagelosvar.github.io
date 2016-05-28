@@ -1,0 +1,7 @@
+Create Web server
+
+sudo ./allinoneruby.bin pinky.rb
+
+sudo ./allinoneruby.bin /home/marinDesktop/pinkyweb/pinky.rb
+
+sudo /home/marina/Desktop/pinkyweb/allinoneruby.bin /home/marina/Desktop/pinkyweb/pinky.rb
