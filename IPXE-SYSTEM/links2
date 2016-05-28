@@ -1,5 +1,8 @@
-Create Web server
+Create Portable Web server
+http://www.yellosoft.us/pinky
 
+call using
+==============================================
 sudo ./allinoneruby.bin pinky.rb
 
 sudo ./allinoneruby.bin /home/marinDesktop/pinkyweb/pinky.rb
