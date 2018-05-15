@@ -14,6 +14,7 @@
 β) Ποιές οι διαφορές των φλεβών και των αρτηριών.  
 
 ![](http://ebooks.edu.gr/modules/ebook/show.php/DSGL-C126/76/618,2243/images/img4_9.jpg)  
+![](http://www.aggeiopathia.gr/images/aanaa/apofraktiki-artiriaki-1.jpg)  
 
 ### Άσκηση 3
 
