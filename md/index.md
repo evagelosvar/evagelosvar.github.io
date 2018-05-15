@@ -1,5 +1,6 @@
 [gimmick:theme](flatly)
 
+![](img/gymnasio.jpg)
 
 Markdown
 --------
