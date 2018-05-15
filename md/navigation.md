@@ -4,7 +4,7 @@
 [Φυσική]()
 
   * # SubMenu Heading 1
-  * [SubMenu Item 1](subitem1.md)
+  * [SubMenu Item 1](docs/A-Theory-Physics.pdf)
   * [SubMenu Item 2](subitem2.md)
   - - - -
   * # SubMenu Heading 2
