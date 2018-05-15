@@ -4,9 +4,9 @@
 [Φυσική]()
 
   * # Επαναληπτικές Ερωτήσεις
-  * [SubMenu Item 1](docs/A-Theory-Physics.pdf)
-  * [SubMenu Item 2](docs/B-Theory-Physics.pdf)
-  * [SubMenu Item 2](docs/C-Theory-Physics.pdf)
+  * [Φυσική Α](docs/A-Theory-Physics.pdf)
+  * [Φυσική Β](docs/B-Theory-Physics.pdf)
+  * [Φυσική Γ](docs/C-Theory-Physics.pdf)
   - - - -
   * # SubMenu Heading 2
   * [SubMenu Item 3](subitem3.md)
