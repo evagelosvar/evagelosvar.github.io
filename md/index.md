@@ -1,4 +1,4 @@
-[gimmick:theme](united)
+[gimmick:theme](flatly)
 
 
 Markdown
