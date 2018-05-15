@@ -2,23 +2,10 @@
 
 ![](img/gymnasio.jpg)
 
-Ιστορικό
+Markdown
 --------
 g45g54g54g54g
 g56g65g65h
-
-
-Καθηγητές
---------
-g45g54g54g54g
-g56g65g65h
-
-
-Δράσεις
---------
-g45g54g54g54g
-g56g65g65h
-
 
 [gimmick:gist](5641564)
 
