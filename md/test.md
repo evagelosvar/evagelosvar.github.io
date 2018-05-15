@@ -2,7 +2,7 @@
 img: "ggfgfgfg"
 template: test
 ---
-![](evagelosvar.github.io/md/img/Chrysanthemum.jpg)  
+![](/md/img/Chrysanthemum.jpg)  
 erererer
 
 rrr"'"''';!2z@ddff
