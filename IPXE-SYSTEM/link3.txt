@@ -1,1 +1,0 @@
-http://www.linuxquestions.org/questions/linux-server-73/can't-open-display-no-protocol-specified-using-gdm-4175462031/
