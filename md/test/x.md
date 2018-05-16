@@ -1,7 +1,4 @@
----
-title: xxx
-date: 17-06-2017
----
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 dddhhh   
 eeeeeeeeeee   
 eeeeeeee
